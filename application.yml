@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: default
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: my-group
+      auto-offset-reset: earliest
+  jpa:
+    hibernate:
+      dl-auto: update
+      cache:
+        use_second_level_cache: true
+        use_query_cache: true
+        region:
+          factory_class: org.hibernate.cache.jcache.JCacheRegionFactory
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+        cache:
+          use_second_level_cache: true
+          use_query_cache: true
+    open-in-view: false
