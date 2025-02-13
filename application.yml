@@ -27,3 +27,5 @@ spring:
           use_second_level_cache: true
           use_query_cache: true
     open-in-view: false
+  general:
+    kafka-topic: your-topic-name
